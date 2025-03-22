@@ -110,19 +110,12 @@
     <script>
       let bgCircles = [];
       
-      function getTotalDimensions() {
-        // Obtiene las dimensiones totales del documento
-        const widthTotal = Math.max(document.body.scrollWidth, document.documentElement.scrollWidth);
-        const heightTotal = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
-        return { width: widthTotal, height: heightTotal };
-      }
-      
       function setup() {
-        const dims = getTotalDimensions();
-        // Crea un canvas con dimensiones del documento completo
-        let canvas = createCanvas(dims.width, dims.height);
+        // Crea un canvas que cubra toda la ventana y lo fija en posición
+        let canvas = createCanvas(windowWidth, windowHeight);
         canvas.position(0, 0);
         canvas.style('z-index', '-1');
+        canvas.style('position', 'fixed');
         
         // Genera las bolitas
         for (let i = 0; i < 20; i++) {
@@ -138,7 +131,6 @@
       }
       
       function draw() {
-        // Fondo negro para todo el canvas
         background(0);
         bgCircles.forEach(circle => {
           fill(circle.col);
@@ -152,8 +144,7 @@
       }
       
       function windowResized() {
-        const dims = getTotalDimensions();
-        resizeCanvas(dims.width, dims.height);
+        resizeCanvas(windowWidth, windowHeight);
       }
     </script>
   </body>
