@@ -1,3 +1,4 @@
+
 <!--Página codificada original de Alex Rafael Alemeida Orellana-->
 
 <!DOCTYPE html>
@@ -24,7 +25,7 @@
     <!-- Fuentes y estilos generales -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <!--link a hoja de Estilos CSS3 -->
-    <link rel="stylesheet" href="css/estilos.css?a=1"> 
+    <link rel="stylesheet" href="/CSS/estilos.css?v=1.0"> 
       
   </head>
   <body>
@@ -100,7 +101,7 @@
         Hecho con ❤️ por <a href="https://www.facebook.com/alexrafaelalmeidaorellana/" 
         target="_blank"> Alex Almeida. </a> <p> Visita también 
             <a href="https://alexrafaelalmeida.github.io/hojadevida" target="_blank"> 
-            https://alexrafaelalmeida.github.io/hojadevida</a>
+            hojadevida</a>
     </footer>
 
     <!-- p5.js Library -->
@@ -147,5 +148,43 @@
         resizeCanvas(windowWidth, windowHeight);
       }
     </script>
-  </body>
+  <!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
 </html>
