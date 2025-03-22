@@ -119,3 +119,8 @@
         margin-top: 2rem;
         min-height: 8rem;
         }
+        
+      header, section, footer {
+        position: relative;
+        z-index: 1;
+      }
