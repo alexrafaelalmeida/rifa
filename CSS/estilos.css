@@ -13,6 +13,12 @@ body {
   line-height: 1.6;
   
 }
+   /* La clase content-wrap servirá como contenedor de todo el contenido visible,
+         asegurando que quede por encima del canvas de fondo */
+         .content-wrap {
+          position: relative;
+          z-index: 1;
+        }
 header {
   position: relative;
   overflow: hidden;
