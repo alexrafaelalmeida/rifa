@@ -1,10 +1,9 @@
-
 <!--Página codificada original de Alex Rafael Alemeida Orellana-->
 
 <!DOCTYPE html>
 <html lang="es">
-    <!--Metadatos-->
   <head>
+    <!-- Metadatos básicos para compatibilidad y responsividad -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,50 +21,80 @@
     <meta name="twitter:title" content="Sorteo de Sitio Web Personalizado">
     <meta name="twitter:description" content="Participa en nuestro sorteo y gana un sitio web hecho a medida, hospedado en GitHub con certificado SSL.">
     <meta name="twitter:image" content="ruta/a/imagen-twitter.jpg">
-    <!-- Fuentes y estilos generales -->
+    <!-- Fuentes externas -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <!--link a hoja de Estilos CSS3 -->
-    <link rel="stylesheet" href="/CSS/estilos.css?v=1.0"> 
-      
+    <!-- Enlace a la hoja de estilos -->
+    <link rel="stylesheet" href="CSS/estilos.css">
+    <!-- Estilos internos para casos puntuales (aseguran fondo negro y elevan el contenido) -->
+    <style>
+      body {
+        margin: 0;
+        background: #000;
+      }
+      /* La clase content-wrap servirá como contenedor de todo el contenido visible,
+         asegurando que quede por encima del canvas de fondo */
+      .content-wrap {
+        position: relative;
+        z-index: 1;
+      }
+    </style>
   </head>
   <body>
-    <header>
-      <!-- Nuevo canvas de animación en el header -->
-      <div id="header-canvas"></div>
-      <h1>Rifa de Sitio Web Personalizado</h1>
+    <!-- El canvas de p5.js se creará y se posicionará automáticamente en el fondo.
+         Al definirlo con position:fixed y z-index negativo, se asegura que ocupe toda la pantalla. -->
+    <!-- NOTA: El script de p5.js insertará el canvas en el body, por lo que no es necesario 
+         crear un contenedor adicional para él -->
+     
+    <!-- Contenedor principal que englobará el header, secciones y footer -->
+    <div class="content-wrap">
+      <!-- HEADER: Contiene el título con efecto neon vaporwave y los botones de navegación -->
+      <header>
+        <div class="container text-center">
+          <!-- Se aplica la clase neon-vaporwave para el efecto dinámico en el texto -->
+          <h1 class="neon-vaporwave">Rifa de Sitio Web Personalizado</h1>
+          <p>Con Alex Rafael Almeida Orellana</p>
+          <nav>
+            <!-- Los botones utilizan la clase .btn para mostrar el efecto neon; se pueden enlazar a secciones como sorteo, beneficios y contacto -->
+            <a class="btn" href="#sorteo">Sorteo</a>
+            <a class="btn" href="#beneficios">Beneficios</a>
+            <a class="btn" href="#contacto">Contacto</a>
+          </nav>
+        </div>
       </header>
 
-    <section id="sorteo">
-      <div class="card">
-        <h2>Participa y Gana</h2>
-        <p>Participa en nuestro sorteo comprando un ticket de tan solo <strong>$0.75 ctvs</strong> y podrás ganar un sitio web creado a tu gusto. Escoge la temática: religiosa, política, comercial, o de entretenimiento, ¡tú decides!</p>
-        <p>Además, la oferta incluye:</p>
-        <ul>
-          <li>Certificado SSL</li>
-          <li>Hospedaje indefinido en GitHub</li>
-          <li>Entrega del código fuente</li>
-          <li>Edición total de la información, ¡incluso podrás cambiar o eliminar detalles si lo deseas!</li>
-        </ul>
-        <a class="btn" href="https://wa.me/593981554458">Conéctate con Alex Almeida</a>
-      </div>
-    </section>
-
-      <section id="beneficios">
-      <div class="card">
-        <h2>Beneficios Exclusivos</h2>
-        <p>Obtén un sitio web con un diseño moderno, atractivo y totalmente responsive. La estética juvenil se refleja en:
+      <!-- SECCIÓN "SORTEO": Informa sobre el sorteo y cómo participar -->
+      <section id="sorteo">
+        <div class="card">
+          <h2>Participa y Gana</h2>
+          <p>Participa en nuestro sorteo comprando un ticket de tan solo <strong>$0.75 ctvs</strong> y podrás ganar un sitio web creado a tu gusto. Escoge la temática: religiosa, política, comercial, o de entretenimiento, ¡tú decides!</p>
+          <p>Además, la oferta incluye:</p>
           <ul>
-            <li>Animaciones interactivas con p5.js</li>
-            <li>Diseño minimalista y moderno</li>
-            <li>Fácil personalización de contenidos</li>
-            <li>Optimización SEO con meta tags y previews para redes sociales</li>
+            <li>Certificado SSL</li>
+            <li>Hospedaje indefinido en GitHub</li>
+            <li>Entrega del código fuente</li>
+            <li>Edición total de la información, ¡incluso podrás cambiar o eliminar detalles si lo deseas!</li>
           </ul>
-        </p>
-      </div>
-    </section>
+          <a class="btn" href="https://wa.me/593981554458">Conéctate con Alex Almeida</a>
+        </div>
+      </section>
 
-     <!-- Nueva sección: Instrucciones para comprar el ticket -->
-     <section id="instrucciones">
+      <!-- SECCIÓN "BENEFICIOS": Muestra las ventajas exclusivas del sorteo -->
+      <section id="beneficios">
+        <div class="card">
+          <h2>Beneficios Exclusivos</h2>
+          <p>Obtén un sitio web con un diseño moderno, atractivo y totalmente responsive. La estética juvenil se refleja en:
+            <ul>
+              <li>Animaciones interactivas con p5.js</li>
+              <li>Diseño minimalista y moderno</li>
+              <li>Fácil personalización de contenidos</li>
+              <li>Optimización SEO con meta tags y previews para redes sociales</li>
+            </ul>
+          </p>
+        </div>
+      </section>
+
+      <!-- Nueva sección: Instrucciones para comprar el ticket -->
+      <section id="instrucciones">
         <article class="card">
           <h2>¿Cómo comprar tu ticket?</h2>
           <p>Para participar en el sorteo, sigue estos pasos:</p>
@@ -85,10 +114,18 @@
                     mezclaré sus tickets impresos, y los colocaré en una funda y seleccionaré: primero, sacaré 2 números desafortunados 
                 y el tercer número será el ganador.</strong></li>
             <a href="wa.me/593995276809" target="_blank" class="btn"> Comunícate con Sam Rueda</a>.  
-        </ol>
+          </ol>
         </article>
       </section>
   
+      <!-- SECCIÓN "CONTACTO": Facilita la comunicación para dudas o información -->
+      <section id="contacto">
+        <div class="card">
+          <h2>Contacto</h2>
+          <p>¿Tienes alguna duda? <a href="mailto:alex@example.com" style="color:#ff6f61;">Contáctame</a></p>
+        </div>
+      </section>
+
       <!-- Causa Social -->
       <section id="causa-social">
         <article class="card">
@@ -97,17 +134,15 @@
         </article>
       </section>
 
-    <footer>
-        Hecho con ❤️ por <a href="https://www.facebook.com/alexrafaelalmeidaorellana/" 
-        target="_blank"> Alex Almeida. </a> <p> Visita también 
-            <a href="https://alexrafaelalmeida.github.io/hojadevida" target="_blank"> 
-            hojadevida</a>
-    </footer>
+      <!-- FOOTER: Información final y créditos -->
+      <footer>
+        <p>Hecho con ❤️ por <a href="https://www.facebook.com/alexrafaelalmeidaorellana/" target="_blank">Alex Almeida</a></p>
+      </footer>
+    </div>
 
-    <!-- p5.js Library -->
+    <!-- p5.js Library: Se carga la librería necesaria para la animación de fondo -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.2/p5.js"></script>
-
-    <!-- Coloca este bloque al final del body y elimina los otros scripts de p5.js para evitar conflictos -->
+    <!-- Script p5.js para el canvas de fondo -->
     <script>
       let bgCircles = [];
       

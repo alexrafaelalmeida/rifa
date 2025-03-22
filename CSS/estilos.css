@@ -1,34 +1,34 @@
-/* Estilos generales */       
-    
+/* Estilos generales */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-    }
+}
+
 body {
   font-family: 'Montserrat', sans-serif;
   font-size: 20px;
-  background-color:#000;
+  background-color: #000;
   color: #fff;
   line-height: 1.6;
-  
 }
-   /* La clase content-wrap servirá como contenedor de todo el contenido visible,
-         asegurando que quede por encima del canvas de fondo */
-         .content-wrap {
-          position: relative;
-          z-index: 1;
-        }
+
+.content-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+/* Header */
 header {
   position: relative;
   overflow: hidden;
   text-align: center;
   padding: 2rem 1rem;
   background: linear-gradient(135deg, #ff0099, #00ffff);
-  /* Opcional: se puede agregar un filtro para aumentar el efecto neon */
   filter: brightness(1.2);
 }
-/* Canvas de animación en el header */
+
+/* Canvas para la animación en el header */
 #header-canvas {
   position: absolute;
   top: 0;
@@ -37,13 +37,15 @@ header {
   height: 200px;
   z-index: 0;
 }
-/* Aseguramos que el contenido del header se muestre sobre la animación */
+
+/* Aseguramos que el contenido del header se muestre sobre el canvas */
 header h1,
 header p,
 header nav {
   position: relative;
   z-index: 1;
 }
+
 header h1 {
   font-size: 2.5rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3), 0 0 10px rgba(255,0,153,0.8), 0 0 20px rgba(0,255,255,0.8);
@@ -59,52 +61,56 @@ header h1 {
 nav {
   margin-top: 1rem;
 }
+
 nav a {
   color: #fff;
   text-decoration: none;
   margin: 0 1rem;
   font-weight: bold;
 }
+
 section {
-  margin:2rem;
-  margin: auto;
+  margin: 2rem auto;
   display: flex;
   text-align: center;
 }
+
 .card {
   background: #333;
   border-radius: 8px;
   padding: 6rem;
   margin-bottom: 1rem;
 }
-  .btn {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background: linear-gradient(45deg, #ff00ff, #00ffff);
-      color: #fff;
-      border: none;
-      margin-top:3rem;
-      border-radius: 4px;
-      text-decoration: none;
-      position: relative;
-      font-weight: bold;
-      box-shadow: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 10px rgba(0, 255, 255, 0.7);
-      animation: neonPulse 1.5s infinite alternate;
-      transition: transform 0.2s ease;
+
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background: linear-gradient(45deg, #ff00ff, #00ffff);
+  color: #fff;
+  border: none;
+  margin-top: 3rem;
+  border-radius: 4px;
+  text-decoration: none;
+  position: relative;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(255, 0, 255, 0.7), 0 0 10px rgba(0, 255, 255, 0.7);
+  animation: neonPulse 1.5s infinite alternate;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+@keyframes neonPulse {
+  from {
+    box-shadow: 0 0 5px rgba(255, 0, 255, 0.7), 0 0 5px rgba(0, 255, 255, 0.7);
   }
-  
-  .btn:hover {
-      transform: scale(1.05);
+  to {
+    box-shadow: 0 0 20px rgba(255, 0, 255, 1), 0 0 20px rgba(0, 255, 255, 1);
   }
-  
-  @keyframes neonPulse {
-      from {
-          box-shadow: 0 0 5px rgba(255, 0, 255, 0.7), 0 0 5px rgba(0, 255, 255, 0.7);
-      }
-      to {
-          box-shadow: 0 0 20px rgba(255, 0, 255, 1), 0 0 20px rgba(0, 255, 255, 1);
-      }
-  }
+}
+
 /* Media queries para responsividad */
 @media (min-width: 768px) {
   header h1 {
@@ -127,7 +133,8 @@ section {
     font-size: 1.2rem;
   }
 }
- footer {
+
+footer {
   display: flex; 
   justify-content: center;
   align-items: center;
@@ -138,8 +145,9 @@ section {
   font-size: 1.2rem;
   margin-top: 2rem;
   min-height: 8rem;
-  }
-  
+}
+
+/* Mantener la posición y separación entre secciones */
 header, section, footer {
   position: relative;
   z-index: 1;
@@ -162,7 +170,6 @@ header, section, footer {
     font-size: 1.2rem;
   }
   section {
-    display: flex;
     gap: 2rem;
   }
   .card {
